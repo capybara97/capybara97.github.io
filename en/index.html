@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pelicano - Smart Clipboard Manager</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts: Outfit (Display) & Noto Sans KR (Body) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&amp;family=Noto+Sans+KR:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Outfit', 'Noto Sans KR', 'sans-serif'],
+            body: ['Noto Sans KR', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              600: '#0ea5e9',
+              900: '#082f49',
+            },
+            neutral: {
+              50: '#f8fafc',
+              200: '#e2e8f0',
+              800: '#1e293b',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography-and-fluid-scaling">
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      scroll-behavior: smooth;
+    }
+    .text-fluid-hero { font-size: clamp(3rem, 8vw, 6.5rem); line-height: 1; letter-spacing: -0.05em; }
+    .text-fluid-h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.2; letter-spacing: -0.03em; }
+    ::selection {
+      background-color: #0ea5e9;
+      color: white;
+    }
+  </style>
+<style data-purpose="custom-animations">
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-body antialiased">
+<nav class="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-50/80 backdrop-blur-md">
+<div class="max-w-4xl mx-auto flex h-16 items-center justify-between px-6">
+<div class="font-display text-xl font-black tracking-tighter text-neutral-900">
+      PELICANO<span class="text-brand-600">.</span>
+</div>
+<div class="hidden gap-6 text-sm font-semibold text-neutral-600 md:flex">
+<a class="transition-colors hover:text-brand-600" href="#features">Features</a>
+<a class="transition-colors hover:text-brand-600" href="#target">Who It's For</a>
+</div>
+<div class="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white p-1 text-xs font-black shadow-sm" aria-label="Language switcher">
+<a class="rounded-full px-3 py-2 text-neutral-500 transition-all hover:bg-neutral-100 hover:text-brand-600" href="../">KO</a>
+<a class="rounded-full bg-neutral-900 px-3 py-2 text-white transition-all" href="./">EN</a>
+</div>
+</div>
+</nav>
+<section class="relative overflow-hidden border-b border-neutral-200 pt-12 pb-12 md:pt-20 md:pb-20">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<span class="mb-4 inline-block rounded-full bg-brand-100 px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-brand-600">
+      Smart Clipboard Manager
+    </span>
+<h1 class="font-display text-fluid-hero mb-6 font-black uppercase text-neutral-900">
+      PELICANO
+    </h1>
+<div class="max-w-2xl mx-auto">
+<p class="mb-4 text-2xl font-black leading-tight text-neutral-800 md:text-4xl">
+        Pelicano devours<br/>
+<span class="italic text-brand-600">everything you copy!</span>
+</p>
+<p class="mb-8 text-base font-medium text-neutral-500 md:text-lg">
+        A smart utility that dramatically reduces the friction of repetitive copy-and-paste work.
+      </p>
+<div class="flex flex-col items-center" data-purpose="hero-cta">
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="group relative inline-flex items-center gap-3 rounded-xl bg-brand-600 px-8 py-4 font-display text-lg font-black text-white shadow-xl shadow-brand-600/30 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-900" href="https://qfqxifaqnympxjbz.public.blob.vercel-storage.com/Pelicano-Installer.exe">
+<span>Download for Windows</span>
+<svg class="h-5 w-5 transition-transform duration-300 group-hover:translate-y-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+<a class="inline-flex items-center gap-3 rounded-xl border-2 border-neutral-200 bg-white px-8 py-4 font-display text-lg font-black text-neutral-900 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:bg-neutral-50" href="https://github.com/capybara97/pelicano" target="_blank">
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+<p class="mt-3 text-[10px] font-medium text-neutral-400">Pelicano-Installer.exe (v0.2.0)</p>
+</div>
+</div>
+</div>
+<div class="animate-float absolute -top-12 -right-12 -z-10 h-64 w-64 rounded-full bg-brand-100 opacity-40 blur-3xl"></div>
+</section>
+<section class="border-b border-neutral-200 bg-white py-12">
+<div class="max-w-4xl mx-auto px-6">
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="group flex flex-col items-center text-center" data-purpose="visual-item">
+<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition-transform group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="mb-2 font-display text-lg font-bold">Infinite Storage</h3>
+<p class="text-xs font-medium leading-relaxed text-neutral-500">Every copied item is stacked into a persistent clipboard history.</p>
+</div>
+<div class="group flex flex-col items-center text-center" data-purpose="visual-item">
+<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition-transform group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="mb-2 font-display text-lg font-bold">Quick Search</h3>
+<p class="text-xs font-medium leading-relaxed text-neutral-500">Open the popup with a shortcut and search your saved snippets instantly.</p>
+</div>
+<div class="group flex flex-col items-center text-center" data-purpose="visual-item">
+<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition-transform group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="mb-2 font-display text-lg font-bold">Stress-Free Workflow</h3>
+<p class="text-xs font-medium leading-relaxed text-neutral-500">Stay focused without worrying about losing something important you copied.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-neutral-50 py-16 md:py-20" id="features">
+<div class="max-w-4xl mx-auto px-6">
+<div class="space-y-16">
+<div class="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12">
+<div class="mb-6 flex items-center gap-4">
+<span class="font-display text-3xl font-black text-brand-600">01</span>
+<h2 class="font-display text-xl font-black uppercase tracking-tight text-neutral-900">Storage</h2>
+<div class="h-px flex-grow bg-neutral-200"></div>
+</div>
+<h3 class="font-display text-fluid-h2 mb-6 font-black text-neutral-900">A bottomless pouch for your copied text</h3>
+<div class="space-y-6 text-base font-medium leading-relaxed text-neutral-600 md:text-lg">
+<p>Most clipboards lose something valuable with one wrong copy. Pelicano does not.</p>
+<div class="flex items-center gap-4 rounded-xl border border-brand-100 bg-brand-50 p-4">
+<span class="rounded bg-brand-600 px-2 py-0.5 font-mono text-xs text-white">Ctrl + C</span>
+<p class="text-sm text-brand-900 md:text-base">Everything you copy is saved into your history in chronological order.</p>
+</div>
+</div>
+</div>
+<div class="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12">
+<div class="mb-6 flex items-center gap-4">
+<span class="font-display text-3xl font-black text-neutral-400">02</span>
+<h2 class="font-display text-xl font-black uppercase tracking-tight text-neutral-900">Selection</h2>
+<div class="h-px flex-grow bg-neutral-200"></div>
+</div>
+<h3 class="font-display text-fluid-h2 mb-6 font-black text-neutral-900">Pick exactly what you need</h3>
+<div class="space-y-6 text-base font-medium leading-relaxed text-neutral-600 md:text-lg">
+<p>Open your history and pull out the one exact item you need from hundreds of saved entries.</p>
+<div class="flex items-center gap-4 rounded-xl border border-neutral-200 bg-neutral-100 p-4">
+<span class="whitespace-nowrap rounded bg-neutral-800 px-2 py-0.5 font-mono text-xs text-white">Ctrl + Shift + V</span>
+<p class="text-sm text-neutral-900 md:text-base">Choose an item from the popup list and paste it immediately with one click.</p>
+</div>
+</div>
+</div>
+<div class="rounded-3xl bg-neutral-900 p-8 shadow-xl md:p-12">
+<div class="mb-6 flex items-center gap-4">
+<span class="font-display text-3xl font-black text-brand-600">03</span>
+<h2 class="font-display text-xl font-black uppercase tracking-tight text-white">Search</h2>
+<div class="h-px flex-grow bg-neutral-700"></div>
+</div>
+<h3 class="font-display text-fluid-h2 mb-6 font-black text-white">Fast search when your history grows</h3>
+<div class="space-y-6 text-base font-medium leading-relaxed text-neutral-400 md:text-lg">
+<p>No matter how much you save, Pelicano's indexing helps you get back to the right snippet fast.</p>
+<p class="border-l-2 border-brand-600 pl-4 text-sm italic text-white md:text-base">Find important text in about a second with simple keyword search.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white py-16" id="target">
+<div class="max-w-4xl mx-auto mb-12 px-6 text-center">
+<h2 class="mb-3 font-display text-3xl font-black text-neutral-900">Who is it for?</h2>
+<p class="text-sm font-medium text-neutral-500">Built for anyone who cares about speed and productivity</p>
+</div>
+<div class="max-w-4xl mx-auto grid grid-cols-1 gap-6 px-6 md:grid-cols-3">
+<div class="group rounded-2xl border border-neutral-100 bg-neutral-50 p-6 transition-all hover:border-brand-600" data-purpose="target-card">
+<h3 class="mb-2 font-display text-xl font-black transition-colors group-hover:text-brand-600">Students</h3>
+<p class="text-xs font-medium leading-relaxed text-neutral-600">
+        Great for students and researchers collecting large amounts of source material and notes.
+      </p>
+</div>
+<div class="group rounded-2xl border border-neutral-100 bg-neutral-50 p-6 transition-all hover:border-brand-600" data-purpose="target-card">
+<h3 class="mb-2 font-display text-xl font-black transition-colors group-hover:text-brand-600">Developers</h3>
+<p class="text-xs font-medium leading-relaxed text-neutral-600">
+        Ideal when you need to move code snippets, config values, and references without constant window switching.
+      </p>
+</div>
+<div class="group rounded-2xl border border-neutral-100 bg-neutral-50 p-6 transition-all hover:border-brand-600" data-purpose="target-card">
+<h3 class="mb-2 font-display text-xl font-black transition-colors group-hover:text-brand-600">Marketers</h3>
+<p class="text-xs font-medium leading-relaxed text-neutral-600">
+        Handy for repetitive copy, response templates, and frequently reused campaign text.
+      </p>
+</div>
+</div>
+</section>
+<section class="relative overflow-hidden bg-brand-600 py-20 text-white md:py-24">
+<div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+<h2 class="mb-6 font-display text-3xl font-black leading-tight md:text-5xl">
+      Meet Pelicano today
+    </h2>
+<p class="mb-10 text-lg font-bold opacity-90">
+      Download it for free and experience a faster clipboard workflow.
+    </p>
+<div class="flex flex-col items-center">
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="transform rounded-full bg-white px-10 py-5 font-display text-xl font-black text-brand-600 shadow-2xl transition-all hover:-translate-y-1 hover:bg-neutral-900 hover:text-white" href="https://qfqxifaqnympxjbz.public.blob.vercel-storage.com/Pelicano-Installer.exe">
+Download for free
+</a>
+<a class="inline-flex transform items-center gap-3 rounded-full border-2 border-white/20 bg-brand-900/20 px-10 py-5 font-display text-xl font-black text-white transition-all hover:-translate-y-1 hover:border-white hover:bg-brand-900/40" href="https://github.com/capybara97/pelicano" target="_blank">
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+<span>GitHub</span>
+</a>
+</div>
+<span class="mt-4 text-xs font-medium text-brand-100">Requires Windows 10 or later</span>
+</div>
+</div>
+<div class="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-brand-900/20 blur-3xl"></div>
+<div class="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-brand-500 opacity-50 blur-3xl"></div>
+</section>
+<footer class="border-t border-neutral-200 bg-white py-8">
+<div class="max-w-4xl mx-auto flex flex-col items-center justify-between gap-4 px-6 md:flex-row">
+<div class="font-display text-lg font-black tracking-tighter text-neutral-900">
+      PELICANO<span class="text-brand-600">.</span>
+</div>
+<div class="text-[10px] font-medium text-neutral-400">
+      © 2024 Bawi Raccoon Studio. All rights reserved.
+    </div>
+<div class="flex gap-4 text-[10px] font-bold text-neutral-500">
+<a class="hover:text-brand-600" href="#">Terms</a>
+<a class="hover:text-brand-600" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
