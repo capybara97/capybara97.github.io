@@ -1,119 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>펠리카노 이용약관</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&amp;family=Noto+Sans+KR:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          display: ['Outfit', 'Noto Sans KR', 'sans-serif'],
-          body: ['Noto Sans KR', 'sans-serif'],
-        },
-        colors: {
-          brand: {
-            50: '#f0f9ff',
-            100: '#e0f2fe',
-            600: '#0ea5e9',
-            900: '#082f49',
-          },
-          neutral: {
-            50: '#f8fafc',
-            200: '#e2e8f0',
-            800: '#1e293b',
-            900: '#0f172a',
-          }
-        }
-      }
-    }
-  }
-</script>
-<style>
-  body {
-    background-color: #f8fafc;
-    color: #0f172a;
-    scroll-behavior: smooth;
-  }
-  .word-keep-all { word-break: keep-all; }
-  ::selection {
-    background-color: #0ea5e9;
-    color: white;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="카피보카 이용약관">
+  <meta name="color-scheme" content="light dark">
+  <title>이용약관 · 카피보카</title>
+  <link rel="icon" href="../assets/app-icon.png">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body class="font-body antialiased">
-<main class="min-h-screen">
-  <section class="border-b border-neutral-200 bg-white">
-    <div class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between gap-4">
-      <div class="font-display font-black text-xl tracking-tighter text-neutral-900">
-        PELICANO<span class="text-brand-600">.</span>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">
+        <img src="../assets/app-icon.png" alt="" width="30" height="30">
+        <span>카피보카</span>
+      </a>
+      <nav class="nav" aria-label="주요 페이지">
+        <a href="../terms/" aria-current="page">이용약관</a>
+        <a href="../privacy/">개인정보</a>
+        <a href="../support/">지원</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <header class="doc-head">
+        <h1>이용약관</h1>
+        <p>카피보카를 이용할 때 지켜야 할 조건입니다.</p>
+        <p class="meta">시행일 2026년 10월 11일 · 운영 바위너구리스튜디오</p>
+      </header>
+
+      <div class="doc">
+        <nav class="toc" aria-label="목차">
+          <strong>목차</strong>
+          <a href="#service">1. 서비스</a>
+          <a href="#account">2. 계정</a>
+          <a href="#ai">3. AI 학습 자료와 OCR</a>
+          <a href="#subscription">4. 구독과 결제</a>
+          <a href="#prohibited">5. 금지 행위</a>
+          <a href="#content">6. 콘텐츠의 권리</a>
+          <a href="#change">7. 서비스 변경과 이용 제한</a>
+          <a href="#liability">8. 책임의 범위</a>
+          <a href="#law">9. 준거법과 분쟁</a>
+          <a href="#notice">10. 약관 변경과 문의</a>
+        </nav>
+
+        <article class="prose">
+        <section id="service">
+          <h2>1. 서비스</h2>
+          <p>카피보카는 영어 단어와 문맥으로 학습 카드를 만들고, 사진 속 영어를 iPhone 안에서 읽어 번역하며, 덱 관리와 간격 반복 복습을 제공하는 학습 보조 서비스입니다. 바위너구리스튜디오가 운영합니다. 일부 기능은 로그인, 인터넷 연결, 하루 사용량 한도 또는 유료 구독이 필요합니다.</p>
+        </section>
+
+        <section id="account">
+          <h2>2. 계정</h2>
+          <ul>
+            <li>Apple 또는 Google 로그인으로 계정을 만듭니다.</li>
+            <li>정확한 정보를 제공하고 로그인 수단을 안전하게 관리해야 합니다.</li>
+            <li>의심스러운 활동을 발견하면 고객 지원으로 알려 주세요.</li>
+            <li><span class="path">설정 › 프로필 › 회원 탈퇴</span>에서 언제든 계정을 삭제할 수 있습니다.</li>
+          </ul>
+        </section>
+
+        <section id="ai">
+          <h2>3. AI 학습 자료와 OCR</h2>
+          <ul>
+            <li>단어, 문맥, 사진에서 읽은 텍스트는 카드 생성과 번역을 위해 Groq 또는 Alibaba Cloud Model Studio로 전송됩니다. 사진 자체는 전송하지 않습니다.</li>
+            <li>AI가 만든 뜻, 예문, 번역과 OCR 결과는 부정확하거나 불완전할 수 있습니다. 시험, 과제, 업무에 쓰기 전에 직접 확인해 주세요.</li>
+            <li>촬영하거나 입력하는 자료는 처리할 권한이 있는 것이어야 하며, 타인의 개인정보나 권리를 침해해서는 안 됩니다.</li>
+          </ul>
+        </section>
+
+        <section id="subscription">
+          <h2>4. 구독과 결제</h2>
+          <ul>
+            <li>라이트와 프리미엄은 1개월 단위 자동 갱신 구독입니다.</li>
+            <li>결제는 구매를 확인할 때 Apple ID 계정으로 청구됩니다.</li>
+            <li>현재 기간이 끝나기 24시간 전까지 해지하지 않으면 자동으로 갱신되며, 종료 전 24시간 안에 다음 기간 요금이 청구될 수 있습니다.</li>
+            <li>구독 관리와 해지: <span class="path">iPhone 설정 › Apple 계정 › 구독</span></li>
+            <li>구매 복원: 앱의 <span class="path">설정 › 프리미엄 › 구독 복원</span></li>
+            <li>앱을 지우거나 회원 탈퇴해도 Apple 구독은 자동으로 해지되지 않습니다.</li>
+            <li>환불은 Apple의 App Store 정책과 절차를 따릅니다.</li>
+          </ul>
+        </section>
+
+        <section id="prohibited">
+          <h2>5. 금지 행위</h2>
+          <ul>
+            <li>법령, 타인의 권리 또는 공공질서를 침해하는 자료를 입력하거나 공유하는 행위</li>
+            <li>타인의 계정이나 인증 정보를 무단으로 쓰거나 보안을 우회하는 행위</li>
+            <li>자동화된 방식으로 서비스를 과도하게 호출하거나 서버에 부하를 주는 행위</li>
+            <li>역설계, 취약점 악용, 악성 코드 배포 등 운영을 방해하는 행위</li>
+            <li>구독, 광고 보상, 사용량 한도를 부정하게 조작하는 행위</li>
+          </ul>
+        </section>
+
+        <section id="content">
+          <h2>6. 콘텐츠의 권리</h2>
+          <p>이용자가 입력한 콘텐츠의 권리는 이용자에게 있습니다. 이용자는 서비스 제공, 저장, 번역, AI 처리에 필요한 범위에서 운영자가 해당 콘텐츠를 처리하는 것을 허락합니다. 앱, 브랜드, 디자인의 권리는 운영자 또는 정당한 권리자에게 있습니다.</p>
+        </section>
+
+        <section id="change">
+          <h2>7. 서비스 변경과 이용 제한</h2>
+          <p>운영상·기술상 필요하면 기능이나 사용량 기준을 바꿀 수 있으며, 중요한 변경은 미리 알립니다. 금지 행위, 보안 위협, 결제 부정이 확인되면 이용을 제한하거나 계정을 종료할 수 있고, 가능한 경우 사유와 이의 제기 방법을 안내합니다.</p>
+        </section>
+
+        <section id="liability">
+          <h2>8. 책임의 범위</h2>
+          <p>서비스는 학습 보조 수단이며 특정 학습 성과나 AI 결과의 정확성을 보장하지 않습니다. 운영자는 고의 또는 중대한 과실이 없는 한 확인하지 않은 AI 결과의 사용, 기기·통신 장애, 제3자 서비스 중단으로 생긴 손해에 대해 법이 허용하는 범위에서 책임을 지지 않습니다. 법률상 제한할 수 없는 소비자의 권리는 이 조항의 영향을 받지 않습니다.</p>
+        </section>
+
+        <section id="law">
+          <h2>9. 준거법과 분쟁</h2>
+          <p>이 약관은 대한민국 법을 따르며, 분쟁은 민사소송법에 따른 관할 법원에서 해결합니다.</p>
+        </section>
+
+        <section id="notice">
+          <h2>10. 약관 변경과 문의</h2>
+          <p>약관을 바꾸면 시행일과 주요 내용을 이 페이지와 앱에서 알립니다. 문의는 아래로 보내 주세요.</p>
+          <div class="contact">
+            <div>
+              <strong>__CONTACT_EMAIL__</strong>
+              <span>바위너구리스튜디오</span>
+            </div>
+            <a class="button" href="mailto:__CONTACT_EMAIL__">메일 보내기</a>
+          </div>
+        </section>
+        </article>
       </div>
-      <a class="inline-flex min-h-[44px] items-center rounded-full border border-neutral-200 px-4 py-2 text-sm font-bold text-neutral-700 transition-colors hover:border-brand-600 hover:text-brand-600" href="/">사이트로 돌아가기</a>
     </div>
-  </section>
+  </main>
 
-  <section class="py-12 md:py-16">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12">
-        <p class="mb-4 inline-block rounded-full bg-brand-100 px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-brand-600">Terms</p>
-        <h1 class="mb-4 font-display text-3xl font-black text-neutral-900 md:text-4xl">이용약관</h1>
-        <p class="mb-10 text-base font-medium leading-relaxed text-neutral-500 word-keep-all">이 페이지는 펠리카노 웹사이트와 관련 다운로드 안내에 적용되는 기본 이용 조건을 설명합니다.</p>
-
-        <div class="space-y-8 text-sm leading-7 text-neutral-700 md:text-base">
-          <section>
-            <h2 class="mb-2 font-display text-xl font-bold text-neutral-900">1. 서비스 소개</h2>
-            <p class="word-keep-all">펠리카노는 Windows용 로컬 우선 클립보드 매니저이며, 이 웹사이트는 프로그램 소개와 다운로드 링크 제공을 위한 정적 안내 페이지입니다.</p>
-          </section>
-
-          <section>
-            <h2 class="mb-2 font-display text-xl font-bold text-neutral-900">2. 소프트웨어 제공 방식</h2>
-            <p class="word-keep-all">펠리카노와 관련 웹페이지는 현재 제공되는 상태 그대로 제공됩니다. 기능, 배포 방식, 제공 여부는 예고 없이 변경되거나 중단될 수 있습니다.</p>
-          </section>
-
-          <section>
-            <h2 class="mb-2 font-display text-xl font-bold text-neutral-900">3. 사용자 책임</h2>
-            <p class="word-keep-all">클립보드에는 민감한 정보가 포함될 수 있습니다. 사용자는 자신의 기기 환경과 저장되는 데이터의 성격을 고려하여 프로그램을 사용해야 하며, 중요한 정보의 관리 책임은 사용자에게 있습니다.</p>
-          </section>
-
-          <section>
-            <h2 class="mb-2 font-display text-xl font-bold text-neutral-900">4. 외부 링크</h2>
-            <p class="word-keep-all">이 사이트는 GitHub 저장소, GitHub Issues, 설치 파일 다운로드 링크 등 외부 서비스로 연결될 수 있습니다. 외부 사이트와 서비스의 운영 및 정책은 각 제공자의 기준을 따릅니다.</p>
-          </section>
-
-          <section>
-            <h2 class="mb-2 font-display text-xl font-bold text-neutral-900">5. 문의</h2>
-            <p class="word-keep-all">서비스 관련 문의는 <a class="font-bold text-brand-600 hover:text-brand-900" href="https://github.com/capybara97/pelicano/issues" target="_blank" rel="noopener">GitHub Issues</a>를 통해 접수할 수 있습니다.</p>
-          </section>
-
-          <section>
-            <h2 class="mb-2 font-display text-xl font-bold text-neutral-900">6. 시행일</h2>
-            <p>시행일: 2026년 3월 15일</p>
-          </section>
-        </div>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 바위너구리스튜디오</span>
+      <a href="mailto:__CONTACT_EMAIL__">__CONTACT_EMAIL__</a>
     </div>
-  </section>
-</main>
-
-<footer class="py-8 bg-white border-t border-neutral-200">
-  <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-    <div class="font-display font-black text-lg tracking-tighter text-neutral-900">
-      PELICANO<span class="text-brand-600">.</span>
-    </div>
-    <div class="text-neutral-400 text-[10px] font-medium">
-      © 2026 바위너구리 Studio. All rights reserved.
-    </div>
-    <div class="flex gap-4 text-neutral-500 font-bold text-[10px]">
-      <a class="hover:text-brand-600" href="/terms/">이용약관</a>
-      <a class="hover:text-brand-600" href="/privacy/">개인정보처리방침</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
