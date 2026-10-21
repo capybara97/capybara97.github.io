@@ -326,6 +326,7 @@ main { flex: 1; }
 .site-footer { padding: 8px 0 32px; font-size: 14px; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: var(--subtle); }
 .site-footer a { color: var(--muted); }
+.site-footer .site-note { flex-basis: 100%; margin: 0; font-size: 12px; line-height: 1.5; }
 
 /* 404 */
 .lost { margin: 56px auto 80px; max-width: 520px; padding: 36px; text-align: center; }
